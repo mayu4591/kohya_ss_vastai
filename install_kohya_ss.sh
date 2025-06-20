@@ -12,7 +12,7 @@ source /opt/environments/python/kohya/bin/activate
 # kohya_ssを本家リポジトリから最新でインストール
 git clone --recursive https://github.com/bmaltais/kohya_ss.git /workspace/kohya_ss
 cd /workspace/kohya_ss
-git fetch --tags && git checkout main
+git fetch --tags && git checkout master
 cd /workspace/
 
 # セットアップ

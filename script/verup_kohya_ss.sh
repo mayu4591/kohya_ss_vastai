@@ -16,7 +16,7 @@ git pull
 git stash
 # KOHYA_REFが設定されていない場合はmainブランチを使用
 if [ -z "${KOHYA_REF:-}" ]; then
-    KOHYA_REF="main"
+    KOHYA_REF="master"
 fi
 # KOHYA_REFが設定されている場合はそのブランチ or タグをチェックアウト
 if git show-ref --verify --quiet "refs/heads/$KOHYA_REF"; then
