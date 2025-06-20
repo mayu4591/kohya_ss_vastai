@@ -1,8 +1,10 @@
 #!/bin/bash
 # 元のディレクトリを保存
 ORIGINAL_DIR=$(pwd)
-# 自身のディレクトリに移動
-cd "$(dirname "$0")/.."
+# ファイルのディレクトリを取得
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+# スクリプトのディレクトリに移動
+cd "$SCRIPT_DIR"
 # 終了時の元のディレクトリに戻る
 trap "cd \"$ORIGINAL_DIR\"" EXIT
 
