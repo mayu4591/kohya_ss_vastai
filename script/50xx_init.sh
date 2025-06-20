@@ -34,9 +34,3 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 echo "verup_pytorch_2_8.sh completed successfully"
-
-./exec.sh
-if [ $? -ne 0 ]; then
-    echo "Error: exec.sh failed"
-    exit 1
-fi

@@ -6,7 +6,7 @@ pip install -U --pre torch torchvision torchaudio --index-url https://download.p
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 
 # xformersのインストール
-pip install $SCRIPT_DIR/package/xformers-0.0.31+eb3ea378.d20250619-cp39-abi3-linux_x86_64
+pip install $SCRIPT_DIR/package/xformers-0.0.31+eb3ea378.d20250619-cp39-abi3-linux_x86_64.whl
 
 # pythonのバージョンを確認
 echo "=========================results========================="

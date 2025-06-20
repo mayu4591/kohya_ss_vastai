@@ -24,3 +24,10 @@ cp kohya_ss_vastai/script/exec.sh /workspace/exec.sh
 cp kohya_ss_vastai/script/execute_sh.py /workspace/execute_sh.py
 cp kohya_ss_vastai/script/add_enque_perm.sh /workspace/add_enque_perm.sh
 cp kohya_ss_vastai/script/stop_exec.sh /workspace/stop_exec.sh
+
+# exec.shを実行
+./exec.sh
+if [ $? -ne 0 ]; then
+    echo "Error: exec.sh failed"
+    exit 1
+fi
