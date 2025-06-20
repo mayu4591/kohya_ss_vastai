@@ -16,10 +16,11 @@ git fetch --tags && git checkout main
 cd /workspace/
 
 # セットアップ
-bash script/50xx_init.sh /workspace/kohya_ss
+git clone https://github.com/mayu4591/kohya_ss_vastai.git
+bash kohya_ss_vastai/script/50xx_init.sh /workspace/kohya_ss
 
 # スクリプトをコピー
-cp script/exec.sh /workspace/exec.sh
-cp script/execute_sh.py /workspace/execute_sh.py
-cp script/add_enque_perm.sh /workspace/add_enque_perm.sh
-cp script/stop_exec.sh /workspace/stop_exec.sh
+cp kohya_ss_vastai/script/exec.sh /workspace/exec.sh
+cp kohya_ss_vastai/script/execute_sh.py /workspace/execute_sh.py
+cp kohya_ss_vastai/script/add_enque_perm.sh /workspace/add_enque_perm.sh
+cp kohya_ss_vastai/script/stop_exec.sh /workspace/stop_exec.sh
