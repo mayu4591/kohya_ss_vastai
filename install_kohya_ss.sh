@@ -7,7 +7,7 @@ cd /workspace
 sudo apt update
 sudo apt upgrade -y
 sudo apt install software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
+sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 
 sudo apt-get -y install python3.10 python3.10-venv python3.10-dev
