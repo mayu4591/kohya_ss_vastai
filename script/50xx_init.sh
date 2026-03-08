@@ -15,7 +15,7 @@ if [ $# -eq 0 ]; then
 fi
 KOHYA_SS_PATH="$1"
 
-source /opt/environments/python/kohya/bin/acrivate
+source /opt/environments/python/kohya/bin/activate
 chmod +x ./verup_kohya_ss.sh
 chmod +x ./exec.sh
 chmod +x ./verup_pytorch_2_8.sh
