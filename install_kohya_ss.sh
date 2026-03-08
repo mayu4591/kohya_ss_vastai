@@ -16,13 +16,17 @@ python3.10 -m venv /opt/environments/python/kohya/
 source /opt/environments/python/kohya/bin/activate
 
 # kohya_ssを本家リポジトリから最新でインストール
-git clone --recursive https://github.com/bmaltais/kohya_ss.git /workspace/kohya_ss
+if [ ! -d "/workspace/kohya_ss" ]; then
+    git clone --recursive https://github.com/bmaltais/kohya_ss.git /workspace/kohya_ss
+fi
 cd /workspace/kohya_ss
 git fetch --tags && git checkout master
 cd /workspace/
 
 # セットアップ
-git clone https://github.com/mayu4591/kohya_ss_vastai.git
+if [ ! -d "./kohya_ss_vastai" ]; then
+    git clone https://github.com/mayu4591/kohya_ss_vastai.git
+fi
 bash kohya_ss_vastai/script/50xx_init.sh /workspace/kohya_ss
 
 # スクリプトをコピー
