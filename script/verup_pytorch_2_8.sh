@@ -1,7 +1,7 @@
 #!/bin/bash
 pip uninstall -y torch torchvision torchaudio xformers
-# 2.9.1に変更
-pip install -U --pre torch==2.9.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+# 2.12.0に変更
+pip install -U --pre torch==2.12.0.dev20260308 torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
 
 # ファイルのディレクトリを取得
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
@@ -33,7 +33,6 @@ pip install -r requirements.txt
 pip install ninja packaging wheel
 pip install .
 cd ..
-
 
 # pythonのバージョンを確認
 echo "=========================results========================="
