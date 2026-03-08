@@ -20,8 +20,11 @@ fi
 
 sudo apt update
 sudo apt install python3-dev build-essential cmake
-git clone https://github.com/facebookresearch/xformers.git
+if [ ! -d "./xformers" ]; then
+    git clone https://github.com/facebookresearch/xformers.git
+fi
 cd xformers
+git fetch --tags && git checkout main
 git submodule update --init --recursive
 # 5090で使用できない問題解消のための暫定patch https://github.com/facebookresearch/xformers/issues/1374?utm_source=chatgpt.com
 sed -i 's/CUDA_MAXIMUM_COMPUTE_CAPABILITY = (9, 0)/CUDA_MAXIMUM_COMPUTE_CAPABILITY = (12, 1)/g' xformers/ops/fmha/cutlass.py
