@@ -1,7 +1,7 @@
 #!/bin/bash
 pip uninstall -y torch torchvision torchaudio xformers
-# 20250827現在か仕様か不明だが最新のtorchだと動かないので0810時点のものを使う
-pip install -U --pre torch==2.9.0.dev20250810 torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+# 2.12にverup
+pip install -U --pre torch==2.12.0.dev20260307+cu128 torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
 
 # ファイルのディレクトリを取得
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
