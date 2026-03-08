@@ -38,6 +38,10 @@ pip install -U pip setuptools wheel ninja packaging numpy
 pip install --no-build-isolation -v .
 cd ..
 
+# バージョン不一致が発生するのでnumpyとscipyを再インストール
+pip uninstall -y numpy scipy
+pip install numpy==1.26.4 scipy==1.11.4
+
 # pythonのバージョンを確認
 echo "=========================results========================="
 mkdir -p /workspace/kohya_ss_vastai/logs
