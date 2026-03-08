@@ -23,15 +23,16 @@ sudo apt install python3-dev build-essential cmake
 git clone https://github.com/facebookresearch/xformers.git
 cd xformers
 git submodule update --init --recursive
+# 5090で使用できない問題解消のための暫定patch https://github.com/facebookresearch/xformers/issues/1374?utm_source=chatgpt.com
+sed -i 's/CUDA_MAXIMUM_COMPUTE_CAPABILITY = (9, 0)/CUDA_MAXIMUM_COMPUTE_CAPABILITY = (12, 1)/g' xformers/ops/fmha/cutlass.py
 
 export CUDA_HOME="/usr/local/cuda-12.8"
 export PATH="$CUDA_HOME/bin:$PATH"
 export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
 export TORCH_CUDA_ARCH_LIST="12.0"
 
-pip install -r requirements.txt
-pip install ninja packaging wheel
-pip install .
+pip install -U pip setuptools wheel ninja packaging numpy
+pip install --no-build-isolation -v .
 cd ..
 
 # pythonのバージョンを確認
